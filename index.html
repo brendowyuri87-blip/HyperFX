@@ -1,7 +1,9 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
+
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>HyperFX — Conteúdo Gamer</title>
 
     <style>
@@ -12,11 +14,13 @@
             color: white;
         }
 
+        /* ---------- HEADER ---------- */
         header {
-            padding: 25px;
+            padding: 20px;
             text-align: center;
             background: #111;
             border-bottom: 2px solid #00eaff;
+            position: relative;
         }
 
         h1 {
@@ -26,6 +30,7 @@
             letter-spacing: 2px;
         }
 
+        /* ---------- MENU DESKTOP ---------- */
         nav {
             margin-top: 12px;
         }
@@ -43,6 +48,18 @@
             opacity: 0.7;
         }
 
+        /* ---------- MENU MOBILE BOTÃO ---------- */
+        .menu-btn {
+            display: none;
+            position: absolute;
+            right: 20px;
+            top: 25px;
+            font-size: 28px;
+            color: cyan;
+            cursor: pointer;
+        }
+
+        /* ---------- HERO ---------- */
         .hero {
             text-align: center;
             padding: 70px 20px;
@@ -77,6 +94,7 @@
             color: #000;
         }
 
+        /* ---------- FOOTER ---------- */
         footer {
             margin-top: 60px;
             padding: 20px;
@@ -86,38 +104,85 @@
             opacity: 0.8;
         }
 
-        /* Responsivo (Celular) */
-        @media(max-width: 600px) {
-            h1 { font-size: 32px; }
-            .hero h2 { font-size: 32px; }
+        /* ---------- RESPONSIVIDADE ---------- */
+        @media(max-width: 700px) {
+
+            h1 {
+                font-size: 30px;
+            }
+
+            .hero h2 {
+                font-size: 30px;
+            }
+
+            /* Esconde menu e ativa hambúrguer */
+            nav {
+                display: none;
+                flex-direction: column;
+                background: #111;
+                border-top: 2px solid cyan;
+                padding: 15px 0;
+            }
+
+            nav a {
+                margin: 10px 0;
+                display: block;
+                font-size: 18px;
+            }
+
+            .menu-btn {
+                display: block;
+            }
+
+            /* Menu aberto */
+            .menu-open {
+                display: flex !important;
+            }
         }
     </style>
+
+    <script>
+        // MENU MOBILE
+        function toggleMenu() {
+            const nav = document.querySelector("nav");
+            nav.classList.toggle("menu-open");
+        }
+    </script>
 </head>
+
 <body>
 
-<header>
-    <h1>HyperFX</h1>
-    <nav>
-        <a href="#">Home</a>
-        <a href="#">Vídeos</a>
-        <a href="#">Downloads</a>
-        <a href="#">Contato</a>
-    </nav>
-</header>
+    <header>
+        <h1>HyperFX</h1>
 
-<div class="hero">
-    <h2>Bem-vindo ao HyperFX</h2>
-    <p>Seu portal gamer minimalista. Aqui você encontra vídeos, dicas, conteúdos exclusivos e tudo sobre o meu canal.</p>
+        <!-- Botão Mobile -->
+        <div class="menu-btn" onclick="toggleMenu()">☰</div>
 
-    <div class="buttons">
-        <a href="https://youtube.com">Meu Canal</a>
-        <a href="#">Apoiar</a>
+        <!-- Menu -->
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="videos.html">Vídeos</a>
+            <a href="downloads.html">Downloads</a>
+            <a href="contato.html">Contato</a>
+        </nav>
+    </header>
+
+    <div class="hero">
+        <h2>Bem-vindo ao HyperFX</h2>
+
+        <p>Seu portal gamer minimalista. Aqui você encontra vídeos, dicas, conteúdos exclusivos e tudo sobre o meu canal.</p>
+
+        <div class="buttons">
+            <a href="https://youtube.com">Meu Canal</a>
+            <a href="#">Apoiar</a>
+        </div>
     </div>
-</div>
 
-<footer>
-    © 2025 — HyperFX. Todos os direitos reservados.
-</footer>
+    <footer>
+        © 2025 — HyperFX. Todos os direitos reservados.
+    </footer>
 
 </body>
+
 </html>
+
