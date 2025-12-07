@@ -7,34 +7,30 @@
     <title>HyperFX — Conteúdo Gamer</title>
 
     <style>
-       body {
+body {
     margin: 0;
     background: #0a0a0a;
     font-family: Arial, sans-serif;
     color: white;
 }
 
-        /* ---------- HEADER ---------- */
-       header {
+/* HEADER */
+header {
     padding: 25px;
     text-align: center;
     background: #111;
-    border-bottom: 2px solid #ff0033; /* neon vermelho */
+    border-bottom: 2px solid #ff0033;
 }
 
- h1 {
+h1 {
     font-size: 40px;
     margin: 0;
-    color: #ff0033; 
+    color: #ff0033;
     letter-spacing: 2px;
 }
 
-        /* ---------- MENU DESKTOP ---------- */
-        nav {
-            margin-top: 12px;
-        }
-
-    nav a {
+/* MENU */
+nav a {
     color: #ff0033;
     margin: 0 16px;
     text-decoration: none;
@@ -48,36 +44,18 @@ nav a:hover {
     text-shadow: 0 0 8px #ff0033;
 }
 
-        /* ---------- MENU MOBILE BOTÃO ---------- */
-        .menu-btn {
-            display: none;
-            position: absolute;
-            right: 20px;
-            top: 25px;
-            font-size: 28px;
-            color: cyan;
-            cursor: pointer;
-        }
-
-        /* ---------- HERO ---------- */
-        .hero {
-            text-align: center;
-            padding: 70px 20px;
-        }
+/* HERO */
+.hero {
+    text-align: center;
+    padding: 70px 20px;
+}
 
 .hero h2 {
     font-size: 45px;
     color: #ff0033;
 }
 
-        .hero p {
-            font-size: 18px;
-            opacity: 0.8;
-            max-width: 700px;
-            margin: auto;
-        }
-
-      .buttons a {
+.buttons a {
     display: inline-block;
     margin: 12px;
     padding: 12px 28px;
@@ -89,13 +67,14 @@ nav a:hover {
     font-weight: bold;
 }
 
-      .buttons a:hover {
+.buttons a:hover {
     background: #ff0033;
     color: #000;
     box-shadow: 0 0 12px #ff0033;
 }
-        /* ---------- FOOTER ---------- */
-       footer {
+
+/* FOOTER */
+footer {
     margin-top: 60px;
     padding: 20px;
     text-align: center;
@@ -103,92 +82,36 @@ nav a:hover {
     border-top: 2px solid #ff0033;
     opacity: 0.8;
 }
-        /* ---------- RESPONSIVIDADE ---------- */
-        @media(max-width: 700px) {
-
-            h1 {
-                font-size: 30px;
-            }
-
-            .hero h2 {
-                font-size: 30px;
-            }
-
-            /* Esconde menu e ativa hambúrguer */
-            nav {
-                display: none;
-                flex-direction: column;
-                background: #111;
-                border-top: 2px solid cyan;
-                padding: 15px 0;
-            }
-
-            nav a {
-                margin: 10px 0;
-                display: block;
-                font-size: 18px;
-            }
-
-            .menu-btn {
-                display: block;
-            }
-
-            /* Menu aberto */
-            .menu-open {
-                display: flex !important;
-            }
-        }
     </style>
-
-    <script>
-        // MENU MOBILE
-        function toggleMenu() {
-            const nav = document.querySelector("nav");
-            nav.classList.toggle("menu-open");
-        }
-    </script>
 </head>
 
 <body>
 
-    <header>
-        <h1>HyperFX</h1>
+<header>
+    <h1>HyperFX</h1>
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="videos.html">Vídeos</a>
+        <a href="downloads.html">Downloads</a>
+        <a href="contato.html">Contato</a>
+        <a href="sobre.html">Sobre Mim</a>
+    </nav>
+</header>
 
-        <!-- Botão Mobile -->
-        <div class="menu-btn" onclick="toggleMenu()">☰</div>
+<div class="hero">
+    <h2>Bem-vindo ao HyperFX</h2>
 
-        <!-- Menu -->
-        <nav>
-            <a href="index.html">Home</a>
-            <a href="videos.html">Vídeos</a>
-            <a href="downloads.html">Downloads</a>
-            <a href="contato.html">Contato</a>
-            <a href="sobre.html">Sobre Mim</a>
+    <p>Seu portal gamer minimalista com vídeos, conteúdos e novidades.</p>
 
-        </nav>
-    </header>
-
-    <div class="hero">
-        <h2>Bem-vindo ao HyperFX</h2>
-
-        <p>Seu portal gamer minimalista. Aqui você encontra vídeos, dicas, conteúdos exclusivos e tudo sobre o meu canal.</p>
-
-        <div class="buttons">
-            <a href="https://www.youtube.com/@RodrigoLimaqta">Meu Canal</a>
-            <a href="#">Apoiar</a>
-        </div>
+    <div class="buttons">
+        <a href="https://www.youtube.com/@RodrigoLimaqta">Meu Canal</a>
+        <a href="#">Apoiar</a>
     </div>
+</div>
 
-    <footer>
-        © 2025 — HyperFX. Todos os direitos reservados.
-    </footer>
+<footer>
+    © 2025 — HyperFX. Todos os direitos reservados.
+</footer>
 
 </body>
-
 </html>
-
-
-
-
-
-
