@@ -80,44 +80,19 @@
     </nav>
 </header>
 
-<div class="videos" id="videoContainer">
-    <p style="text-align:center; opacity:0.7;">Carregando vídeos...</p>
+<div class="videos">
+    <!-- 6 vídeos mais recentes da playlist de uploads -->
+    <iframe src="https://www.youtube.com/embed?list=UU7PtdLK-qnUaqzZoAHu1JXg&index=1"></iframe>
+    <iframe src="https://www.youtube.com/embed?list=UU7PtdLK-qnUaqzZoAHu1JXg&index=2"></iframe>
+    <iframe src="https://www.youtube.com/embed?list=UU7PtdLK-qnUaqzZoAHu1JXg&index=3"></iframe>
+    <iframe src="https://www.youtube.com/embed?list=UU7PtdLK-qnUaqzZoAHu1JXg&index=4"></iframe>
+    <iframe src="https://www.youtube.com/embed?list=UU7PtdLK-qnUaqzZoAHu1JXg&index=5"></iframe>
+    <iframe src="https://www.youtube.com/embed?list=UU7PtdLK-qnUaqzZoAHu1JXg&index=6"></iframe>
 </div>
 
 <footer>
     © 2025 — HyperFX. Todos os direitos reservados.
 </footer>
-
-<script>
-// ID do seu canal
-const channelID = "UC7PtdLK-qnUaqzZoAHu1JXg";
-
-// URL para pegar uploads automáticamente
-const url = `https://www.youtube.com/feeds/videos.xml?channel_id=${channelID}`;
-
-fetch(url)
-    .then(res => res.text())
-    .then(str => new window.DOMParser().parseFromString(str, "text/xml"))
-    .then(data => {
-        const entries = data.querySelectorAll("entry");
-        const container = document.getElementById("videoContainer");
-        container.innerHTML = ""; // limpa o "Carregando..."
-
-        // pega só os 6 mais recentes
-        for (let i = 0; i < 6 && i < entries.length; i++) {
-            const id = entries[i].querySelector("yt\\:videoId, videoId").textContent;
-
-            const iframe = `
-                <iframe 
-                    src="https://www.youtube.com/embed/${id}" 
-                    frameborder="0" 
-                    allowfullscreen>
-                </iframe>
-            `;
-            container.innerHTML += iframe;
-        }
-    });
-</script>
 
 </body>
 </html>
