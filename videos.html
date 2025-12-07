@@ -2,65 +2,122 @@
 <html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Vídeos — HyperFX</title>
+    <title>HyperFX — Vídeos</title>
 
     <style>
         body {
             margin: 0;
             background: #0a0a0a;
-            color: white;
             font-family: Arial, sans-serif;
+            color: white;
         }
 
         header {
-            padding: 20px;
+            padding: 25px;
             text-align: center;
             background: #111;
             border-bottom: 2px solid #00eaff;
         }
 
         h1 {
-            color: #00eaff;
+            font-size: 40px;
             margin: 0;
+            color: #00eaff;
+            letter-spacing: 2px;
         }
 
-        .videos-container {
-            max-width: 1000px;
-            margin: 30px auto;
-            padding: 20px;
+        nav {
+            margin-top: 12px;
+        }
+
+        nav a {
+            color: #00eaff;
+            margin: 0 16px;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 15px;
+            transition: 0.2s;
+        }
+
+        nav a:hover {
+            opacity: 0.7;
+        }
+
+        .videos {
+            max-width: 1100px;
+            margin: auto;
+            padding: 30px;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 25px;
         }
 
         iframe {
             width: 100%;
-            height: 320px;
+            height: 200px;
             border-radius: 10px;
-            border: 2px solid #00eaff;
-            margin-bottom: 20px;
         }
 
-        @media(max-width: 600px) {
-            iframe {
-                height: 220px;
-            }
+        footer {
+            margin-top: 40px;
+            padding: 20px;
+            text-align: center;
+            background: #111;
+            border-top: 2px solid #00eaff;
+            opacity: 0.8;
         }
     </style>
 </head>
 <body>
 
 <header>
-    <h1>Vídeos</h1>
+    <h1>HyperFX</h1>
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="videos.html">Vídeos</a>
+        <a href="downloads.html">Downloads</a>
+        <a href="contato.html">Contato</a>
+    </nav>
 </header>
 
-<div class="videos-container">
-
-    <h2>Últimos vídeos</h2>
-
-    <!-- Lista automática de vídeos do seu canal -->
-    <iframe src="https://www.youtube.com/embed?listType=user_uploads&list=RodrigoLimaqta" 
-            allowfullscreen></iframe>
-
+<div class="videos" id="videoContainer">
+    <p style="text-align:center; opacity:0.7;">Carregando vídeos...</p>
 </div>
+
+<footer>
+    © 2025 — HyperFX. Todos os direitos reservados.
+</footer>
+
+<script>
+// ID do seu canal
+const channelID = "UC7PtdLK-qnUaqzZoAHu1JXg";
+
+// URL para pegar uploads automáticamente
+const url = `https://www.youtube.com/feeds/videos.xml?channel_id=${channelID}`;
+
+fetch(url)
+    .then(res => res.text())
+    .then(str => new window.DOMParser().parseFromString(str, "text/xml"))
+    .then(data => {
+        const entries = data.querySelectorAll("entry");
+        const container = document.getElementById("videoContainer");
+        container.innerHTML = ""; // limpa o "Carregando..."
+
+        // pega só os 6 mais recentes
+        for (let i = 0; i < 6 && i < entries.length; i++) {
+            const id = entries[i].querySelector("yt\\:videoId, videoId").textContent;
+
+            const iframe = `
+                <iframe 
+                    src="https://www.youtube.com/embed/${id}" 
+                    frameborder="0" 
+                    allowfullscreen>
+                </iframe>
+            `;
+            container.innerHTML += iframe;
+        }
+    });
+</script>
 
 </body>
 </html>
