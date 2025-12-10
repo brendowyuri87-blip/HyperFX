@@ -99,3 +99,49 @@ footer {
     border-top: 3px solid #ff003c;
     color: #bbb;
 }
+/* CONTATO */
+.contato-container {
+    max-width: 600px;
+    margin: 40px auto;
+    background: #111;
+    padding: 25px;
+    border-radius: 10px;
+    border: 1px solid #ff0033;
+}
+
+.contato-container form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.contato-container input,
+.contato-container textarea {
+    width: 100%;
+    padding: 12px;
+    background: #000;
+    border: 1px solid #ff0033;
+    border-radius: 6px;
+    color: white;
+}
+
+.contato-container textarea {
+    height: 120px;
+    resize: none;
+}
+
+.contato-container button {
+    padding: 12px;
+    background: #ff0033;
+    color: #000;
+    font-weight: bold;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.contato-container button:hover {
+    background: #ff3355;
+    box-shadow: 0 0 10px #ff0033;
+}
