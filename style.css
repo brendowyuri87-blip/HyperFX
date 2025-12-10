@@ -60,44 +60,7 @@ h1 {
 
 
 /* --- FORM CONTATO --- */
-form {
-    display: flex;
-    flex-direction: column;
-    width: 70%;
-    margin: auto;
-}
 
-input, textarea {
-    background: #0d0d0d;
-    border: 2px solid #ff003c;
-    padding: 10px;
-    margin: 10px 0;
-    color: white;
-    border-radius: 5px;
-}
-
-button {
-    background: #ff003c;
-    border: none;
-    padding: 15px;
-    color: white;
-    margin-top: 15px;
-    cursor: pointer;
-    font-size: 18px;
-    border-radius: 5px;
-}
-
-button:hover {
-    background: #cc002f;
-}
-
-/* --- FOOTER --- */
-footer {
-    text-align: center;
-    padding: 25px;
-    margin-top: 40px;
-    border-top: 3px solid #ff003c;
-    color: #bbb;
 }
 /* CONTATO */
 .contato-container {
