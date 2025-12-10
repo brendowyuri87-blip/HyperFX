@@ -2,70 +2,33 @@
 <html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Contato — HyperFX</title>
-
-    <style>
-body {
-    margin: 0;
-    background: #0a0a0a;
-    color: white;
-    font-family: Arial, sans-serif;
-}
-
-header {
-    padding: 20px;
-    text-align: center;
-    background: #111;
-    border-bottom: 2px solid #ff0033;
-}
-
-h1 {
-    color: #ff0033;
-}
-
-input, textarea {
-    width: 100%;
-    padding: 12px;
-    margin: 12px 0;
-    background: #111;
-    border: 2px solid #ff0033;
-    color: white;
-    border-radius: 6px;
-}
-
-button {
-    width: 100%;
-    padding: 14px;
-    background: #ff0033;
-    border: none;
-    color: black;
-    font-weight: bold;
-    border-radius: 6px;
-}
-    </style>
+    <link rel="stylesheet" href="style.css">
+    <title>Contato - HyperFX</title>
 </head>
 <body>
 
 <header>
-    <h1>Contato</h1>
+    <img src="logo.png" alt="HyperFX Logo">
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="videos.html">Vídeos</a>
+        <a href="downloads.html">Downloads</a>
+        <a href="contato.html">Contato</a>
+    </nav>
 </header>
 
-<div class="form">
-    <form action="https://formspree.io/f/mblnknjy" method="POST">
+<h1>Contato</h1>
 
-        <label>Seu nome</label>
-        <input type="text" name="nome" required>
+<form>
+    <input type="text" placeholder="Seu nome">
+    <input type="email" placeholder="Seu email">
+    <textarea rows="6" placeholder="Sua mensagem"></textarea>
+    <button>Enviar Mensagem</button>
+</form>
 
-        <label>Seu email</label>
-        <input type="email" name="email" required>
-
-        <label>Sua mensagem</label>
-        <textarea name="mensagem" rows="5" required></textarea>
-
-        <button type="submit">Enviar Mensagem</button>
-    </form>
-</div>
+<footer>
+    © 2025 — HyperFX. Todos os direitos reservados.
+</footer>
 
 </body>
 </html>
