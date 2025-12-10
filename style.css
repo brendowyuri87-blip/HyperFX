@@ -1,0 +1,98 @@
+/* Reset básico */
+body {
+    margin: 0;
+    padding: 0;
+    background-color: #0d0d0d;
+    font-family: Arial, sans-serif;
+    color: white;
+}
+
+/* --- HEADER E MENU --- */
+header {
+    text-align: center;
+    padding: 20px;
+    border-bottom: 3px solid #ff003c;
+}
+
+header img {
+    width: 150px;
+    margin-bottom: 5px;
+}
+
+nav {
+    margin-top: 10px;
+}
+
+nav a {
+    text-decoration: none;
+    color: #ff003c;      /* Vermelho do tema */
+    font-size: 18px;
+    margin: 0 15px;
+    transition: 0.3s;
+}
+
+nav a:hover {
+    color: white;
+}
+
+/* --- TÍTULOS --- */
+h1 {
+    text-align: center;
+    color: #ff003c;
+    margin-top: 40px;
+}
+
+/* --- GRID DE VÍDEOS --- */
+.video-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    padding: 40px;
+}
+
+.video-grid iframe {
+    width: 100%;
+    height: 250px;
+    border-radius: 10px;
+}
+
+/* --- FORM CONTATO --- */
+form {
+    display: flex;
+    flex-direction: column;
+    width: 70%;
+    margin: auto;
+}
+
+input, textarea {
+    background: #0d0d0d;
+    border: 2px solid #ff003c;
+    padding: 10px;
+    margin: 10px 0;
+    color: white;
+    border-radius: 5px;
+}
+
+button {
+    background: #ff003c;
+    border: none;
+    padding: 15px;
+    color: white;
+    margin-top: 15px;
+    cursor: pointer;
+    font-size: 18px;
+    border-radius: 5px;
+}
+
+button:hover {
+    background: #cc002f;
+}
+
+/* --- FOOTER --- */
+footer {
+    text-align: center;
+    padding: 25px;
+    margin-top: 40px;
+    border-top: 3px solid #ff003c;
+    color: #bbb;
+}
